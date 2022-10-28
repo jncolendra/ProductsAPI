@@ -1,0 +1,12 @@
+{
+  "defaultEnv": "dev",
+  "dev": {
+    "host": "localhost",
+    "user": "root",
+    "port": 3306,
+    "password" : "",
+    "database": "serino-training",
+    "driver": "mysql",
+    "multipleStatements": true
+  }
+}
