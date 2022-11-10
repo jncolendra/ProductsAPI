@@ -34,5 +34,13 @@ export class GlobalExceptionFilter implements ExceptionFilter {
         trace: error.stack,
       });
     }
+    if (status === HttpStatus.BAD_REQUEST) {
+      console.log(error);
+      return response.status(status).send({
+        status: status,
+        error: error.message,
+        trace: error.stack,
+      });
+    }
   }
 }

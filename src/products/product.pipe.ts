@@ -8,7 +8,7 @@ export class ProductValidationPipe implements PipeTransform {
     const { error } = ProductSchema.validate(value);
     const errorMessages = error?.details.map((d) => d.message);
     if (error) {
-      throw new BadRequestException(errorMessages);
+      throw new BadRequestException(error, errorMessages.join(','));
     }
     return value;
   }

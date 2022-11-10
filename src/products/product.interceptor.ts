@@ -23,6 +23,7 @@ export class ProductInterceptor<T> implements NestInterceptor<T, Response<T>>
     const now = Date.now();
     return next.handle().pipe(map((data) =>{
         return {
+            API: `Made from NestJS v1`,
             statusCode: context.switchToHttp().getResponse().statusCode,
             ...data,
         }
